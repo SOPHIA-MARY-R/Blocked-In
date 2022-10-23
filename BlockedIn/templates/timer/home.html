@@ -1,17 +1,8 @@
-{% load static %}
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Home</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="{% static 'css/timer/home.css' %}">
-    </head>
-    <body>
-        <h1>Home Page</h1>
-        <h4>Hello user</h4>
-        <script src="" async defer></script>
-    </body>
-</html>
+{% extends "base.html" %}
+{% block main %} 
+    <div class="ctr col-md-12">
+        <div class="title">BlockedIn</div>
+        <div class="desc col-md-12">BlockedIn is a extension to block and limit the usage of distracting and non-educational websites like Facebook, Instagram, Snapchat etc. 
+            It also keeps track of the time spent on each website and provides timely warnings.</div>
+    </div>
+{% endblock %}

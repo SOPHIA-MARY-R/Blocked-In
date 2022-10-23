@@ -1,7 +1,68 @@
 body{
-    background-color : rgb(56, 112, 138);
-    font-size : 24px;
+    background-color: #FFDFDE;
+    color: #6A7BA2;
+    width: 100%;
 }
-h1{
-    color: aqua;
+
+nav{
+    background-color: #6A7BA2;
 }
+
+.navbar-brand{
+    color: #FFDFDE;
+    position: relative;
+    left: 105%;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title:hover {
+    transform: scale(1.15); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+.desc::selection{
+    background-color: #6A7BA2;
+    color: #FFDFDE;
+}
+
+.ctr{
+    font-size: 2em;
+    text-align: center;
+    width: 100%;
+}
+.desc{
+    margin-top: 5%;
+}
+  /* Animation */
+  .title{
+    margin-top: 5%;
+    background-color: #6A7BA2;
+    color: #FFDFDE;
+    white-space: nowrap;
+    overflow: hidden;    
+    transition: transform 1.5s;
+    font-size: 6rem;
+    width: 35%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    /* font-weight: bold; */
+    /* animation: animated-text 2s steps(29,end) 0s 1 normal both; */
+  }
+  
+  /* text animation */
+  
+  @keyframes animated-text{
+    from{width: 0;}
+    to{width: 472px;}
+  }
+  
+  /* cursor animations */
+  
+  @keyframes animated-cursor{
+    from{border-right-color: #6A7BA2;}
+    to{border-right-color: #FFDFDE;}
+  }
