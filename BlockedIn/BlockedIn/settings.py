@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'livereload',
     'django.contrib.staticfiles',
     'authentication',
-    'timer',
+    'block'
 ]
 
 MIDDLEWARE = [

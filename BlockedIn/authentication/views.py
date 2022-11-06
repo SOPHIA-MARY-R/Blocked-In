@@ -36,3 +36,5 @@ def Login(request):
     form = AuthenticationForm()
     return render(request, 'authentication/login.html', {'form':form, 'title':'log in'})
 
+def home(request):
+    return render(request, 'block/home.html')
