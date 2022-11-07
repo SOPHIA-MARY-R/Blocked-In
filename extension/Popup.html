@@ -6,6 +6,7 @@
       body{
         border: 5px solid #6A7BA2;
         margin: 0px;
+        padding-bottom: 10%;
         background-color: #FFDFDE;
       }
       .main{ 
@@ -31,6 +32,28 @@
         border-radius: 5px;
         border: 2px solid #6A7BA2;
       }
+      #Link {
+        border: 2px solid #6A7BA2;
+        border-radius: 5px;
+        padding: 4px;
+        background-color: #6A7BA2;
+        width: 70%;
+        margin-left: 13%;
+      }
+      #Link:active{
+        color: #6A7BA2;
+        background-color: #FFDFDE;
+      }
+      #Link a{
+        color: #FFDFDE;
+        padding-left: 28%;
+        font-size: 18px;
+        font-weight: bold;
+        text-decoration: none;
+      }
+      #Link a:active{
+        color: #6A7BA2;
+      }
     </style>
   </head>
   <body>
@@ -40,7 +63,9 @@
         <form action="http://127.0.0.1:8000/extension/add/" method="POST">
           <input type="url" name="url" id="url-input" />
         </form>
-        <p id="link">Visit site: http://127.0.0.1:8000 </p>
+        <div id="Link">
+          <a href="http://127.0.0.1:8000" target="_blank">Main Site</a>
+        </div>
       </div>
     </div>
   </body>
