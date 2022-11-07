@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "BlockedIn",
+  "version": "0.1.1",
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["Content.js"],
+      "page": ["index.html"]
+    }
+  ],
+  "icons": { "48": "icon48.png", "128": "icon128.png" },
+  "action": {
+    "default_popup": "Popup.html",
+    "default_title": "BlockedIn"
+  },
+  "permissions": [
+    "tabs",
+    "storage",
+    "https://*/"
+    
+  ]
+}
