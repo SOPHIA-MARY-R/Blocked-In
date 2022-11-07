@@ -2,16 +2,44 @@
 <html>
   <head> 
     <script src="Popup.js"></script>
+    <style>
+      body{
+        border: 5px solid #6A7BA2;
+        margin: 0px;
+        background-color: #FFDFDE;
+      }
+      .main{ 
+        width: 250px;
+      }
+      h1 {
+        margin-top: 0px;
+        text-align: center;
+        height: 40px;
+        background-color:#6A7BA2;
+        color: #FFDFDE;
+      }
+
+      form {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      input{
+        padding: 8px;
+        border-radius: 5px;
+        border: 2px solid #6A7BA2;
+      }
+    </style>
   </head>
   <body>
-    <div class="main" style="margin: 5px; padding: 6px; width: 100px">
-      <h1>Stay Focused</h1>
-      <hr />
+    <div class="main">
+      <h1 id="heading">Stay Focused</h1>
       <div>
         <form action="http://127.0.0.1:8000/extension/add/" method="POST">
           <input type="url" name="url" id="url-input" />
         </form>
-        <p>Visit site: http://127.0.0.1:8000 </p>
       </div>
     </div>
   </body>
