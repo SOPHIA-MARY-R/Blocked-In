@@ -1,0 +1,268 @@
+@keyframes sunrise {
+  from {
+    transform: rotate(-45deg);
+  }
+
+  to {
+    transform: rotate(315deg);
+  }
+}
+
+@keyframes moonrise {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes dawn {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+}
+
+@keyframes noon {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0;
+  }
+}
+
+@keyframes dusk {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0;
+  }
+}
+
+@keyframes midnight {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+}
+
+body {
+  --animation-speed: 24s;
+  background-color: rgb(37, 29, 24);
+}
+
+body.pause {
+  --animation-speed: 0;
+}
+body{
+  margin:0;
+  padding:0;
+  font-family: 'Tomorrow', sans-serif;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;}
+
+h1{
+  font-size: 60px;
+}
+p{
+  font-size: 40px;
+
+}
+.text{
+  position: absolute;
+  color: #FFF;
+  top: 10%;
+  text-align: center;
+}
+
+.sky {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  max-height: 600px;
+  overflow: hidden;
+}
+
+.sky__phase {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transition: opacity 0.2s;
+}
+
+.sky__dawn {
+  background: linear-gradient(
+    0deg,
+    rgba(254, 215, 102, 1) 0%,
+    rgba(205, 237, 246, 1) 100%
+  );
+  animation: linear dawn infinite var(--animation-speed);
+}
+
+.sky__noon {
+  background: linear-gradient(
+    0deg,
+    rgba(205, 237, 246, 1) 0%,
+    rgba(36, 123, 160, 1) 100%
+  );
+  animation: linear noon infinite var(--animation-speed);
+}
+
+.sky__dusk {
+  background: linear-gradient(
+    0deg,
+    rgba(255, 32, 110, 1) 0%,
+    rgba(10, 0, 94, 1) 100%
+  );
+  animation: linear dusk infinite var(--animation-speed);
+}
+
+.sky__midnight {
+  background: linear-gradient(
+    0deg,
+    rgba(2, 0, 20, 1) 0%,
+    rgba(10, 0, 94, 1) 100%
+  );
+  animation: linear midnight infinite var(--animation-speed);
+}
+
+.orbit {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  margin: 200px auto;
+  transform: rotate(-45deg);
+  animation: linear sunrise infinite var(--animation-speed);
+}
+
+@media (min-width: 768px) {
+  .sky {
+    max-height: 600px;
+  }
+  .orbit {
+    width: 700px;
+    height: 700px;
+    margin: 150px auto;
+  }
+}
+
+@media (min-width: 940px) {
+  .orbit {
+    width: 800px;
+    height: 800px;
+  }
+}
+
+@media (min-width: 1200px) {
+  body {
+    --animation-speed: 28s;
+  }
+  .orbit {
+    width: 1000px;
+    height: 1000px;
+    margin: 200px auto;
+  }
+}
+
+@media (min-width: 1500px) {
+  body {
+    --animation-speed: 30s;
+  }
+  .orbit {
+    width: 1300px;
+    height: 1300px;
+  }
+}
+
+.sun {
+  position: absolute;
+  top: -40px;
+  left: -40px;
+  width: 80px;
+  height: 80px;
+  background-color: rgb(254, 215, 102);
+  border-radius: 50%;
+  box-shadow: 0 0 14px 14px rgba(254, 215, 102, 0.2);
+}
+
+.moon {
+  position: absolute;
+  bottom: -40px;
+  right: -40px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0 0 7px 7px rgba(255, 255, 255, 0.2);
+}
+
+#sky__stars > div {
+  width: 3px;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+}
+
+#toggle-animation {
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+  text-transform: uppercase;
+  background-color: rgb(2, 0, 20);
+  color: #fff;
+  border: 0;
+  padding: 0.5em 1em;
+  letter-spacing: 0.5px;
+}
+
+#toggle-animation:hover {
+  background-color: rgb(61, 0, 21);
+  cursor: pointer;
+}
+
+.paused {
+  display: none;
+}
+
+.pause .paused {
+  display: block;
+}
+
+.pause .playing {
+  display: none;
+}
+
