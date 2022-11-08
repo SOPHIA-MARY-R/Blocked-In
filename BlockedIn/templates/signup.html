@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
 <style>
-body {font-family: Courier New, Helvetica, sans-serif;}
+body {
+  font-family: Courier New, Helvetica, sans-serif;
+  margin: 50px 500px 50px 500px;
+}
 * {box-sizing: border-box;}
 input[type=text], input[type=password] {
   width: 100%;
@@ -51,28 +54,6 @@ button:hover {
   padding: 16px;
 }
 
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: ;
-  padding-top: 50px;
-}
-
-/* Modal Content/Box */
-.modal-content {
-  background-color: lightgrey;
-  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
-}
-
 /* Style the horizontal ruler */
 hr {
   border: 1px solid #f1f1f1;
@@ -110,14 +91,6 @@ hr {
 }
 </style>
 <body>
-
-<h2>Signup Form</h2>
-
-<button onclick="document.getElementById('form').style.display='block'" style="width:auto;">Sign Up</button>
-
-<div id="form" class="modal">
-  <span onclick="document.getElementById('form').style.display='none'" class="close" title="Close Modal">&times;</span>
-  <form class="modal-content" action="/action_page.php">
     <div class="container">
       <h1>Sign Up</h1>
       <p>Not an user? Create an account using this form.</p>
@@ -144,18 +117,6 @@ hr {
     </div>
   </form>
 </div>
-
-<script>
-// Get the modal
-var modal = document.getElementById('form');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-</script>
 
 </body>
 </html>
