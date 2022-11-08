@@ -32,6 +32,7 @@ body{
 }
 .title:hover {
     transform: scale(1.15); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+    cursor: pointer;
 }
 .desc::selection{
     background-color: #6A7BA2;
@@ -61,18 +62,4 @@ body{
     border-radius: 10px;
     /* font-weight: bold; */
     /* animation: animated-text 2s steps(29,end) 0s 1 normal both; */
-  }
-  
-  /* text animation */
-  
-  @keyframes animated-text{
-    from{width: 0;}
-    to{width: 472px;}
-  }
-  
-  /* cursor animations */
-  
-  @keyframes animated-cursor{
-    from{border-right-color: #6A7BA2;}
-    to{border-right-color: #FFDFDE;}
   }

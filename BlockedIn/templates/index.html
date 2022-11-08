@@ -1,22 +1,59 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>WebBlock</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-        <script src="https://kit.fontawesome.com/9b45bbf03c.js" crossorigin="anonymous"></script>
-    </head>
-    <body>
-        <h1> Website Blocker </h1>
-        <table style="border: bottom">
+
+{% block main %}
+        <style>
+            h1{
+                margin-top: 5%;
+                text-align: center;
+            }
+            table{
+                width: 40%;
+                margin-left: auto;
+                margin-right: auto;
+                border: 2px solid #6A7BA2;
+                border-radius: 17px;
+            }
+            thead tr{
+                margin-top: 0px;
+                background-color: #6A7BA2;
+                height: 50px;
+                color: #FFDFDE;
+            }
+            tbody tr{
+                padding: 10px;
+                height: 50px;
+            }
+            tbody tr:nth-child(even){
+                background-color: #6A7BA2;
+                color: #FFDFDE;
+            }
+            p {
+                text-align: center;
+                border: 2px solid black;
+                width: 541px;
+                height: 30px;
+                margin-left: auto;
+                margin-top: 2%;
+                text-decoration: none;
+                margin-right: auto;
+                background-color: #6A7BA2;
+            }
+            a{
+                text-decoration: none;
+                font-weight: bold;
+                color: #FFDFDE;
+            }
+            a:hover,a:visited{
+                text-decoration: none;
+            }
+        </style>
+        <h1> Blocked Sites</h1>
+        <table>
             <thead>
                 <tr>
                     <th>Domain</th>
-                    <th>Edit</th>
+                    <th style="margin-left: 10px;">Edit</th>
                     <th>Delete</th>
                 </tr>
             </thead>
@@ -39,5 +76,6 @@
         </table>
         <p><a href="{% url 'create' %}">Add more to blocked list</a></p>
         <script src="{% static '/extension/Content.js' %}" type="text/js" async defer></script>
+{% endblock %}
     </body>
 </html>
