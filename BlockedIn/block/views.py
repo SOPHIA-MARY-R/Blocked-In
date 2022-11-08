@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from . models import Site
 from urllib.parse import urlparse
 from json import dumps
@@ -10,21 +10,12 @@ from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 def sites(request):
     Sites = Site.objects.all()
-    '''
+    return render(request, 'index.html', {'Sites':Sites})
+
+def create(request):
     if request.method=='POST':
         if request.POST.get('url'):
-                #Getting the domain name
-                X=Link.strip().split('/')
-                #if protocol is http or https, then X[1] will be the www. or subdomain
-                if(X[0] == "https:" or X[0] == "http:"):
-                        X = X[2].split(".")
-                else:
-                    X=X[0].split(".")
-                
-                if len(X)==2:
-                    Domain_name=X[0]
-                else:
-                    Domain_name=X[1]
+            Sites = Site.objects.all()
             #Getting Domain name
             Link=request.POST.get('url')
             Domain_name = urlparse(Link).netloc
@@ -41,26 +32,49 @@ def sites(request):
             else:
                 print('Domain already blocked!')
                 messages.info(request, 'Domain already blocked!')
+            return render(request, 'block/create.html')
+    else:
+        return render(request, 'block/create.html')
 
-            Dict={}
+'''
+def update(request, id):
+    site=Site.objects.get(id=id)
+    Sites=Site.objects.all()
+    return render(request, 'index.html', {'site': site, 'Sites':Sites})
+'''
+
+def edit(request, id):
+    s = Site.objects.get(id=id)
+    if request.method=='POST':
+        if request.POST.get('url'):            
+            Sites = Site.objects.all()
+            #Getting Domain name
+            Link=request.POST.get('url')
+            Domain_name = urlparse(Link).netloc
+            isAlreadyExists=False
             for site in Sites:
-                if site.domain not in Dict: Dict[site.domain]=''
-                Dict[site.domain]=site.link
-            dataJSON = dumps(Dict) 
-            ''' 
-    return render(request, 'index.html', {'Sites':Sites})
+                if site.domain==Domain_name:
+                    isAlreadyExists=True
+                    break
+            if not isAlreadyExists:
+                s.link=Link
+                s.domain=Domain_name
+                s.save()
+            else:
+                print('Domain already blocked!')
+                messages.info(request, 'Domain already blocked!')
+            return redirect('/extension')
+    return render(request, 'block/edit.html', {'site':s})
 
-def edit(request):
-    pass
-
-def delete(request):
-    pass
+def delete(request, id):
+    site = Site.objects.get(id= id)
+    site.delete()
+    return redirect('/extension')
 
 @require_http_methods(['POST'])
 @csrf_exempt
 def add(request):
     Link = request.POST.get('url')
-    #print('------\n'+Link+'----------')
     Domain=urlparse(Link).netloc
     Sites = Site.objects.all()
     Obj=Site()
@@ -76,18 +90,6 @@ def add(request):
         #_ = Site.objects.create(link=request.POST['url'], )
     
     return render(request, 'index.html', {'Sites':Sites})
-
-
-@require_http_methods(['POST'])
-@csrf_exempt
-def load(request):
-    # Get comparison rating
-    Link = request.POST['url']
-    # Return it as plaintext
-    response = HttpResponse(content_type='text/plain')
-    response.write('Saved')
-    return response
-
 
 def get(request):
     if request.method == 'GET':

@@ -8,26 +8,36 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
+        <script src="https://kit.fontawesome.com/9b45bbf03c.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <h1> Website Blocker </h1>
-        <!--
-        <form method="POST" action="{% url 'sites' %}">
-            {% csrf_token %}
-            <input type="url" name="url" required>
-            <input type="submit">
-        </form>
-        -->
-        {% for u in Sites %}
-        <p class="urls">{{ u.domain }}</p>
-        {% endfor %}
-        {% if messages %}
-        <div class="messages">
-            {% for message in messages %}
-            <p {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
-            {% endfor %}
-        </div>
-        {% endif %}
+        <table style="border: bottom">
+            <thead>
+                <tr>
+                    <th>Domain</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for u in Sites %}
+                <tr>
+                    <td>{{u.domain}}</td>
+                    <td><a href="/extension/edit/{{u.id}}"><i class="fa fa-edit" aria-hidden="true" fa-2x></i></a></td>
+                    <td><a href="/extension/delete/{{u.id}}"><i class="fa fa-trash-alt" aria-hidden="true" fa-2x></i></a></td>
+                </tr>
+                {% endfor %}
+                {% if messages %}
+                <div class="messages">
+                    {% for message in messages %}
+                    <p {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </tbody>
+        </table>
+        <p><a href="{% url 'create' %}">Add more to blocked list</a></p>
         <script src="{% static '/extension/Content.js' %}" type="text/js" async defer></script>
     </body>
 </html>
