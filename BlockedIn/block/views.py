@@ -10,7 +10,7 @@ from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 def sites(request):
     Sites = Site.objects.all()
-    return render(request, 'index.html', {'Sites':Sites})
+    return render(request, 'block/index.html', {'Sites':Sites})
 
 def create(request):
     if request.method=='POST':

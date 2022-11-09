@@ -31,7 +31,7 @@
             }
             p {
                 text-align: center;
-                border: 1px solid black;
+                border: none;
                 width: 541px;
                 height: 30px;
                 margin-left: auto;
@@ -44,13 +44,10 @@
                 cursor: pointer;
             }
             #Link{
-                text-decoration: none;
-                font-weight: bold;
-                color: #FFDFDE;
-            }
-            #Link{
                 color: #FFDFDE;
                 transform: scale(1.5);
+                text-decoration: none;
+                font-weight: bold;
             }
             i{
                 color: #414141;
@@ -85,5 +82,3 @@
         <p><a id="Link" href="{% url 'create' %}">Add more to blocked list</a></p>
         <script src="{% static '/extension/Content.js' %}" type="text/js" async defer></script>
 {% endblock %}
-    </body>
-</html>

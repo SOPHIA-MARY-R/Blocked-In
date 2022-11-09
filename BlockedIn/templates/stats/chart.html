@@ -1,5 +1,9 @@
-<html>
-  <head>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Chart {% endblock %}
+
+{% block main %}
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
       google.charts.load('current', {'packages':['bar']});
@@ -34,8 +38,16 @@
         chart.draw(data, google.charts.Bar.convertOptions(options));
       };
     </script>
-  </head>
-  <body>
-    <div id="top_x_div" style="width: 800px; height: 600px;"></div>
-  </body>
-</html>
+    <style>
+      #top_x_div{
+        margin: 50px 200px 50px 200px;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 500px;
+        height: 600px;
+      }
+    </style>
+    <div id="top_x_div"></div>
+{% endblock %}
