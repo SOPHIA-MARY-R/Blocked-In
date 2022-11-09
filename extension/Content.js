@@ -1,252 +1,268 @@
 const generateSTYLES = () => {
   return `<style>@import url(https://fonts.googleapis.com/css?family=opensans:500);
-  body {
-    background: #33cc99;
-    color: #fff;
-    font-family: "Open Sans", sans-serif;
-    max-height: 700px;
-    overflow: hidden;
-  }
-  .c {
-    text-align: center;
-    display: block;
-    position: relative;
-    width: 80%;
-    margin: 100px auto;
-  }
-  ._404 {
-    font-size: 220px;
-    position: relative;
-    display: inline-block;
-    z-index: 2;
-    height: 250px;
-    letter-spacing: 15px;
-  }
-  ._1 {
-    text-align: center;
-    display: block;
-    position: relative;
-    letter-spacing: 12px;
-    font-size: 4em;
-    line-height: 80%;
-  }
-  ._2 {
-    text-align: center;
-    display: block;
-    position: relative;
-    font-size: 20px;
-  }
-  .text {
-    font-size: 70px;
-    text-align: center;
-    position: relative;
-    display: inline-block;
-    margin: 19px 0px 0px 0px;
-    /* top: 256.301px; */
-    z-index: 3;
-    width: 100%;
-    line-height: 1.2em;
-    display: inline-block;
-  }
-  
- 
-  .right {
-    float: right;
-    width: 60%;
-  }
-  
-  hr {
-    padding: 0;
-    border: none;
-    border-top: 5px solid #fff;
-    color: #fff;
-    text-align: center;
-    margin: 0px auto;
-    width: 420px;
-    height: 10px;
-    z-index: -10;
-  }
-  
-  hr:after {
-    display: inline-block;
-    position: relative;
-    top: -0.75em;
-    font-size: 2em;
-    padding: 0 0.2em;
-    background: #33cc99;
-  }
-  
-  .cloud {
-    width: 350px;
-    height: 120px;
-  
-    background: #fff;
-    background: linear-gradient(top, #fff 100%);
-    background: -webkit-linear-gradient(top, #fff 100%);
-    background: -moz-linear-gradient(top, #fff 100%);
-    background: -ms-linear-gradient(top, #fff 100%);
-    background: -o-linear-gradient(top, #fff 100%);
-  
-    border-radius: 100px;
-    -webkit-border-radius: 100px;
-    -moz-border-radius: 100px;
-  
-    position: absolute;
-    margin: 120px auto 20px;
-    z-index: -1;
-    transition: ease 1s;
-  }
-  
-  .cloud:after,
-  .cloud:before {
-    content: "";
-    position: absolute;
-    background: #fff;
-    z-index: -1;
-  }
-  
-  .cloud:after {
-    width: 100px;
-    height: 100px;
-    top: -50px;
-    left: 50px;
-  
-    border-radius: 100px;
-    -webkit-border-radius: 100px;
-    -moz-border-radius: 100px;
-  }
-  
-  .cloud:before {
-    width: 180px;
-    height: 180px;
-    top: -90px;
-    right: 50px;
-  
-    border-radius: 200px;
-    -webkit-border-radius: 200px;
-    -moz-border-radius: 200px;
-  }
-  
-  .x1 {
-    top: -50px;
-    left: 100px;
-    -webkit-transform: scale(0.3);
-    -moz-transform: scale(0.3);
-    transform: scale(0.3);
-    opacity: 0.9;
-    -webkit-animation: moveclouds 15s linear infinite;
-    -moz-animation: moveclouds 15s linear infinite;
-    -o-animation: moveclouds 15s linear infinite;
-  }
-  
-  .x1_5 {
-    top: -80px;
-    left: 250px;
-    -webkit-transform: scale(0.3);
-    -moz-transform: scale(0.3);
-    transform: scale(0.3);
-    -webkit-animation: moveclouds 17s linear infinite;
-    -moz-animation: moveclouds 17s linear infinite;
-    -o-animation: moveclouds 17s linear infinite;
-  }
-  
-  .x2 {
-    left: 250px;
-    top: 30px;
-    -webkit-transform: scale(0.6);
-    -moz-transform: scale(0.6);
-    transform: scale(0.6);
-    opacity: 0.6;
-    -webkit-animation: moveclouds 25s linear infinite;
-    -moz-animation: moveclouds 25s linear infinite;
-    -o-animation: moveclouds 25s linear infinite;
-  }
-  
-  .x3 {
-    left: 250px;
-    bottom: -70px;
-  
-    -webkit-transform: scale(0.6);
-    -moz-transform: scale(0.6);
-    transform: scale(0.6);
-    opacity: 0.8;
-  
-    -webkit-animation: moveclouds 25s linear infinite;
-    -moz-animation: moveclouds 25s linear infinite;
-    -o-animation: moveclouds 25s linear infinite;
-  }
-  
-  .x4 {
-    left: 470px;
-    botttom: 20px;
-  
-    -webkit-transform: scale(0.75);
-    -moz-transform: scale(0.75);
-    transform: scale(0.75);
-    opacity: 0.75;
-  
-    -webkit-animation: moveclouds 18s linear infinite;
-    -moz-animation: moveclouds 18s linear infinite;
-    -o-animation: moveclouds 18s linear infinite;
-  }
-  
-  .x5 {
-    left: 200px;
-    top: 300px;
-  
-    -webkit-transform: scale(0.5);
-    -moz-transform: scale(0.5);
-    transform: scale(0.5);
-    opacity: 0.8;
-  
-    -webkit-animation: moveclouds 20s linear infinite;
-    -moz-animation: moveclouds 20s linear infinite;
-    -o-animation: moveclouds 20s linear infinite;
-  }
-  
-  @-webkit-keyframes moveclouds {
-    0% {
-      margin-left: 1000px;
-    }
-    100% {
-      margin-left: -1000px;
-    }
-  }
-  @-moz-keyframes moveclouds {
-    0% {
-      margin-left: 1000px;
-    }
-    100% {
-      margin-left: -1000px;
-    }
-  }
-  @-o-keyframes moveclouds {
-    0% {
-      margin-left: 1000px;
-    }
-    100% {
-      margin-left: -1000px;
-    }
-  }
+      @keyframes sunrise {
+        from {
+          transform: rotate(-45deg);
+        }
+      
+        to {
+          transform: rotate(315deg);
+        }
+      }
+      
+      @keyframes moonrise {
+        from {
+          transform: rotate(0deg);
+        }
+      
+        to {
+          transform: rotate(180deg);
+        }
+      }
+      
+      @keyframes dawn {
+        0% {
+          opacity: 0;
+        }
+        10% {
+          opacity: 1;
+        }
+        60% {
+          opacity: 0;
+        }
+      }
+      
+      @keyframes noon {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+        75% {
+          opacity: 0;
+        }
+      }
+      
+      @keyframes dusk {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 0;
+        }
+        70% {
+          opacity: 1;
+        }
+        90% {
+          opacity: 0;
+        }
+      }
+      
+      @keyframes midnight {
+        0% {
+          opacity: 1;
+        }
+        25% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 0;
+        }
+        80% {
+          opacity: 1;
+        }
+      }
+      
+      body {
+        --animation-speed: 24s;
+        background-color: rgb(37, 29, 24);
+      }
+      
+      body.pause {
+        --animation-speed: 0;
+      }
+      body{
+        margin:0;
+        padding:0;
+        font-family: 'Tomorrow', sans-serif;
+        height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        overflow:hidden;}
+      
+      h1{
+        font-size: 60px;
+      }
+      p{
+        font-size: 40px;
+      
+      }
+      .text{
+        position: absolute;
+        color: #FFF;
+        top: 10%;
+        text-align: center;
+      }
+      
+      .sky {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        max-height: 600px;
+        overflow: hidden;
+      }
+      
+      .sky__phase {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        transition: opacity 0.2s;
+      }
+      
+      .sky__dawn {
+        background: linear-gradient(
+          0deg,
+          rgba(254, 215, 102, 1) 0%,
+          rgba(205, 237, 246, 1) 100%
+        );
+        animation: linear dawn infinite var(--animation-speed);
+      }
+      
+      .sky__noon {
+        background: linear-gradient(
+          0deg,
+          rgba(205, 237, 246, 1) 0%,
+          rgba(36, 123, 160, 1) 100%
+        );
+        animation: linear noon infinite var(--animation-speed);
+      }
+      
+      .sky__dusk {
+        background: linear-gradient(
+          0deg,
+          rgba(255, 32, 110, 1) 0%,
+          rgba(10, 0, 94, 1) 100%
+        );
+        animation: linear dusk infinite var(--animation-speed);
+      }
+      
+      .sky__midnight {
+        background: linear-gradient(
+          0deg,
+          rgba(2, 0, 20, 1) 0%,
+          rgba(10, 0, 94, 1) 100%
+        );
+        animation: linear midnight infinite var(--animation-speed);
+      }
+      
+      .orbit {
+        position: relative;
+        width: 500px;
+        height: 500px;
+        margin: 200px auto;
+        transform: rotate(-45deg);
+        animation: linear sunrise infinite var(--animation-speed);
+      }
+      
+      @media (min-width: 768px) {
+        .sky {
+          max-height: 600px;
+        }
+        .orbit {
+          width: 700px;
+          height: 700px;
+          margin: 150px auto;
+        }
+      }
+      
+      @media (min-width: 940px) {
+        .orbit {
+          width: 800px;
+          height: 800px;
+        }
+      }
+      
+      @media (min-width: 1200px) {
+        body {
+          --animation-speed: 28s;
+        }
+        .orbit {
+          width: 1000px;
+          height: 1000px;
+          margin: 200px auto;
+        }
+      }
+      
+      @media (min-width: 1500px) {
+        body {
+          --animation-speed: 30s;
+        }
+        .orbit {
+          width: 1300px;
+          height: 1300px;
+        }
+      }
+      
+      .sun {
+        position: absolute;
+        top: -40px;
+        left: -40px;
+        width: 80px;
+        height: 80px;
+        background-color: rgb(254, 215, 102);
+        border-radius: 50%;
+        box-shadow: 0 0 14px 14px rgba(254, 215, 102, 0.2);
+      }
+      
+      .moon {
+        position: absolute;
+        bottom: -40px;
+        right: -40px;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background-color: #fff;
+        box-shadow: 0 0 7px 7px rgba(255, 255, 255, 0.2);
+      }
+      
+      #sky__stars > div {
+        width: 3px;
+        height: 3px;
+        background-color: #fff;
+        border-radius: 50%;
+        position: absolute;
+      } 
    </style>`;
 };
 
 const generateHTML = () => {
   return `
    
-   <div id="clouds">
-      <div class="cloud x1"></div>
-      <div class="cloud x1_5"></div>
-      <div class="cloud x2"></div>
-      <div class="cloud x3"></div>
-      <div class="cloud x4"></div>
-      <div class="cloud x5"></div>
-  </div>
-  <div class='c'>
-      <div class='_404'>404</div>
-      <hr>
-      <div class='_1'>GET BACK TO WORK</div>
-  </div>
+      <head>
+    <div class="text">
+      <h1>ERROR</h1>
+      <h1>404</h1>
+      <p>Don't waste your time in this website >_<* </p>
+      </div>
+      <div class="sky">
+      <div class="sky__phase sky__dawn"></div>
+      <div class="sky__phase sky__noon"></div>
+      <div class="sky__phase sky__dusk"></div>
+      <div class="sky__phase sky__midnight">
+        <div id="sky__stars"></div>
+      </div>
+      <div class="orbit">
+        <div class="sun"></div>
+        <div class="moon"></div>
+      </div>
+    </div>
+    </head>
    `;
 };
 var list = [];
