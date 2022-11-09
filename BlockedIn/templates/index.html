@@ -12,18 +12,19 @@
                 width: 40%;
                 margin-left: auto;
                 margin-right: auto;
-                border: 2px solid #6A7BA2;
-                border-radius: 17px;
             }
-            thead tr{
+            thead{
                 margin-top: 0px;
-                background-color: #6A7BA2;
+                text-transform: uppercase;
+                background-color: #adb5bd;
                 height: 50px;
-                color: #FFDFDE;
+                margin-bottom: 10px;
+                color: #41464b;
             }
-            tbody tr{
+            tr{
                 padding: 10px;
                 height: 50px;
+                border-bottom: 1px solid #6A7BA2;
             }
             tbody tr:nth-child(even){
                 background-color: #6A7BA2;
@@ -31,7 +32,7 @@
             }
             p {
                 text-align: center;
-                border: 2px solid black;
+                border: 1px solid black;
                 width: 541px;
                 height: 30px;
                 margin-left: auto;
@@ -40,13 +41,20 @@
                 margin-right: auto;
                 background-color: #6A7BA2;
             }
-            a{
+            p:hover{
+                cursor: pointer;
+            }
+            #Link{
                 text-decoration: none;
                 font-weight: bold;
                 color: #FFDFDE;
             }
-            a:hover,a:visited{
-                text-decoration: none;
+            #Link{
+                color: #FFDFDE;
+                transform: scale(1.5);
+            }
+            i{
+                color: #414141;
             }
         </style>
         <h1> Blocked Sites</h1>
@@ -75,7 +83,7 @@
                 {% endif %}
             </tbody>
         </table>
-        <p><a href="{% url 'create' %}">Add more to blocked list</a></p>
+        <p><a id="Link" href="{% url 'create' %}">Add more to blocked list</a></p>
         <script src="{% static '/extension/Content.js' %}" type="text/js" async defer></script>
         <script src="https://kit.fontawesome.com/9b45bbf03c.js" crossorigin="anonymous"></script>
 {% endblock %}
