@@ -45,11 +45,18 @@ a{
       </center>
     <div class="buton-grp">
     <center>
-        <button onclick="document.location='signup.html'"><a href="#"><i class="fa fa-user-plus" aria-hidden="true"
+        <button><a href="{% url 'register' %}"><i class="fa fa-user-plus" aria-hidden="true"
             fa-2x></i> Sign Up</a></button>
     </center>
     <center>
-        <button onclick="document.location='login.html'"><a href="#"><i class="fa fa-sign-in" aria-hidden="true" fa-3x></i>Login</a></button>
+      {% if user.is_authenticated %}
+      <button><a href="{% url 'logout' %}" class="w3-bar-item w3-button"><i class="fa fa-sign-out" aria-hidden="true"
+          fa-3x></i> Logout</a></button>
+
+      {% else %}
+      <button><a href="{% url 'login' %}" class="w3-bar-item w3-button"><i class="fa fa-sign-in" aria-hidden="true" fa-3x></i>
+        Login</a></button>
+      {% endif %}
     </center>
   </div>
 </div>

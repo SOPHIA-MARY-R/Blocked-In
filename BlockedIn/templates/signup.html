@@ -1,161 +1,178 @@
 <!DOCTYPE html>
 <html>
-<style>
-body {font-family: Courier New, Helvetica, sans-serif;}
-* {box-sizing: border-box;}
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background:lightgrey;
-}
 
-/* Add a background color when the inputs get focus */
-input[type=text]:focus, input[type=password]:focus {
-  background-color: whitesmoke;
-  outline: none;
-}
+<head>
+  <title>Register</title>
+  <style>
+    body {
+      font-family: Courier New, Helvetica, sans-serif;
+    }
 
-/* Set a style for all buttons */
-button {
-  background-color: lightseagreen;
-  color: black;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
-}
+    * {
+      box-sizing: border-box;
+    }
 
-button:hover {
-  opacity:1;
-}
+    input[type=text],
+    input[type=password] {
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      display: inline-block;
+      border: none;
+      background: lightgrey;
+    }
 
-/* Extra styles for the cancel button */
-.cancelbtn {
-  padding: 14px 20px;
-  background-color: darksalmon;
-}
+    /* Add a background color when the inputs get focus */
+    input[type=text]:focus,
+    input[type=password]:focus {
+      background-color: whitesmoke;
+      outline: none;
+    }
 
-/* Float cancel and signup buttons and add an equal width */
-.cancelbtn, .signupbtn {
-  float: left;
-  width: 50%;
-}
+    /* Set a style for all buttons */
+    button {
+      background-color: lightseagreen;
+      color: black;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      opacity: 0.9;
+    }
 
-/* Add padding to container elements */
-.container {
-  padding: 16px;
-}
+    button:hover {
+      opacity: 1;
+    }
 
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: ;
-  padding-top: 50px;
-}
+    /* Extra styles for the cancel button */
+    .cancelbtn {
+      padding: 14px 20px;
+      background-color: darksalmon;
+    }
 
-/* Modal Content/Box */
-.modal-content {
-  background-color: lightgrey;
-  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
-}
+    /* Float cancel and signup buttons and add an equal width */
+    .cancelbtn,
+    .signupbtn {
+      float: left;
+      width: 50%;
+    }
 
-/* Style the horizontal ruler */
-hr {
-  border: 1px solid #f1f1f1;
-  margin-bottom: 25px;
-}
- 
-/* The Close Button (x) */
-.close {
-  position: absolute;
-  right: 35px;
-  top: 15px;
-  font-size: 40px;
-  font-weight: bold;
-  color: #f1f1f1;
-}
+    /* Add padding to container elements */
+    .container {
+      padding: 16px;
+    }
 
-.close:hover,
-.close:focus {
-  color: #f44336;
-  cursor: pointer;
-}
+    /* The Modal (background) */
+    .modal {
+      display: none;
+      /* Hidden by default */
+      position: fixed;
+      /* Stay in place */
+      z-index: 1;
+      /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%;
+      /* Full width */
+      height: 100%;
+      /* Full height */
+      overflow: auto;
+      /* Enable scroll if needed */
+      background-color: ;
+      padding-top: 50px;
+    }
 
-/* Clear floats */
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
-}
+    /* Modal Content/Box */
+    .modal-content {
+      background-color: lightgrey;
+      margin: 5% auto 15% auto;
+      /* 5% from the top, 15% from the bottom and centered */
+      border: 1px solid #888;
+      width: 80%;
+      /* Could be more or less, depending on screen size */
+    }
 
-/* Change styles for cancel button and signup button on extra small screens */
-@media screen and (max-width: 300px) {
-  .cancelbtn, .signupbtn {
-     width: 100%;
-  }
-}
-</style>
+    /* Style the horizontal ruler */
+    hr {
+      border: 1px solid #f1f1f1;
+      margin-bottom: 25px;
+    }
+
+    /* The Close Button (x) */
+    .close {
+      position: absolute;
+      right: 35px;
+      top: 15px;
+      font-size: 40px;
+      font-weight: bold;
+      color: #f1f1f1;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #f44336;
+      cursor: pointer;
+    }
+
+    /* Clear floats */
+    .clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+    /* Change styles for cancel button and signup button on extra small screens */
+    @media screen and (max-width: 300px) {
+
+      .cancelbtn,
+      .signupbtn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
 <body>
 
-<h2>Signup Form</h2>
+  <h2>Signup Form</h2>
 
-<button onclick="document.getElementById('form').style.display='block'" style="width:auto;">Sign Up</button>
+  <button onclick="document.getElementById('form').style.display='block'" style="width:auto;">Sign Up</button>
 
-<div id="form" class="modal">
-  <span onclick="document.getElementById('form').style.display='none'" class="close" title="Close Modal">&times;</span>
-  <form class="modal-content" action="/action_page.php">
-    <div class="container">
-      <h1>Sign Up</h1>
-      <p>Not an user? Create an account using this form.</p>
-      <hr>
-      <label for="name"><b>Name</b></label>
-      <input type="text" placeholder="Enter Name" name="Name" required>
-      <label for="email"><b>Email</b></label>
-      <input type="text" placeholder="Enter Email" name="email" required>
+  <div id="form" class="modal">
+    <span onclick="document.getElementById('form').style.display='none'" class="close"
+      title="Close Modal">&times;</span>
+    <form class="modal-content" action="{% url 'register' %}" method="POST">
+      {% csrf_token %}
+      <div class="container">
+        <h1>Sign Up</h1>
+        <p>Not an user? Create an account using this form.</p>
+        <hr>
+        <label for="name"><b>Username</b></label>
+        {{form.username}}
 
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
+        <label for="email"><b>Email</b></label>
+        {{form.email}}
 
-      <label for="psw-repeat"><b>Repeat Password</b></label>
-      <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-      
-      <label>
-        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-      </label>
+        <label for="psw"><b>Password</b></label>
+        {{form.password1}}
 
-      <div class="clearfix">
-        <button type="button" onclick="document.getElementById('form').style.display='none'" class="cancelbtn">Cancel</button>
-        <button type="submit" class="signupbtn">Sign Up</button>
+        <label for="psw-repeat"><b>Repeat Password</b></label>
+        {{form.password2}}
+
+        <label>
+          <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+        </label>
+
+        <div class="clearfix">
+          <button type="button" class="cancelbtn"><a href="{% url 'welcome' %}">Cancel</a></button>
+          <button type="submit" class="signupbtn">Sign Up</button>
+        </div>
       </div>
-    </div>
-  </form>
-</div>
-
-<script>
-// Get the modal
-var modal = document.getElementById('form');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-</script>
-
+      <a href="{% url 'login' %}" style="text-decoration: none;color:#0D5B74; font-weight:bold">Already have an
+        account? Login</a>
+    </form>
+  </div>
 </body>
+
 </html>

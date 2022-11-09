@@ -1,62 +1,67 @@
 <!DOCTYPE html>
-<html>
-
 <head>
   <title>Welcome</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
   <script src="https://kit.fontawesome.com/9b45bbf03c.js" crossorigin="anonymous"></script>
+  <html>
   <style>
-    body,
-    h1,
-    h4 {
-      font-family: "Raleway", sans-serif
+    body {
+      background-color: lightgrey;
+      color: black;
+      font-family: "Courier New", Courier, monospace;
+      margin: auto;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    body,
-    html {
-      height: 100%
+    .buton-grp button {
+      background-color: darkgrey;
+      border: 1px lightpink;
+      color: black;
+      padding: 9px 23px;
+      cursor: pointer;
+      width: 45%;
+      display: block;
+
     }
 
-    .bgimg {
-      background-image: url('https://archziner.com/wp-content/uploads/2020/07/cool-wallpapers-for-girls-dark-blue-background-drawing-of-leaves-around-the-edges-in-different-colors-blue-pink-green.jpg');
-      min-height: 100%;
-      background-position: center;
-      background-size: cover;
+    .buton-grp button:hover {
+      background-color: whitesmoke;
+
+    }
+
+    a {
+      text-decoration: none;
     }
   </style>
 </head>
 
 <body>
-
-  <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
-    <div class="w3-display-middle">
-      <h1 class="w3-jumbo w3-animate-top">BlockedIn</h1></h1>
-      <hr class="w3-border-grey" style="margin:auto;width:40%">
-      <br>
-      <!--
-      <center><a href="#" class="w3-bar-item w3-button">Login</a></center>
-      <center><a href="#" class="w3-bar-item w3-button">Sign Up</a></center>
-      -->
+  <div class="w3-display-middle">
+    <center>
+      <p style="font-weight: bold;">Welcome!</p>
+      <h1>BlockedIn</h1>
+      <p style="font-size: 20px; font-weight: bold;">A chrome extension to block distracting websites </p>
+    </center>
+    <div class="buton-grp">
       <center>
-        <a href="{% url 'register' %}" class="w3-bar-item w3-button"><i class="fa fa-user-plus" aria-hidden="true"
-            fa-2x></i> Sign Up</a>
+        <button><a href="{% url 'register' %}"><i class="fa fa-user-plus" aria-hidden="true" fa-2x></i> Sign
+            Up</a></button>
       </center>
       <center>
         {% if user.is_authenticated %}
-        <a href="{% url 'logout' %}" class="w3-bar-item w3-button"><i class="fa fa-sign-out" aria-hidden="true"
-            fa-3x></i> Logout</a>
+        <button><a href="{% url 'logout' %}"><i class="fa fa-sign-out" aria-hidden="true" fa-3x></i> Logout</a></button>
 
         {% else %}
-        <a href="{% url 'login' %}" class="w3-bar-item w3-button"><i class="fa fa-sign-in" aria-hidden="true" fa-3x></i>
-          Login</a>
+        <button><a href="{% url 'login' %}"><i class="fa fa-sign-in" aria-hidden="true" fa-3x></i>
+            Login</a></button>
         {% endif %}
       </center>
     </div>
   </div>
-
 </body>
 
 </html>
