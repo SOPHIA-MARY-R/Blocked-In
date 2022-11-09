@@ -1,19 +1,51 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Create</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-    </head>
-    <body>
-        <form method="POST" action="{% url 'create' %}">
-            {% csrf_token %}
-            <input type="url" name="url" required>
-            <input type="submit">
-        </form>
-        <p><a href="{% url 'sites' %}">View blocked list</a></p>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main %}
+            <style>
+                form,p{
+                    margin-left: 35%;
+                    margin-right: 40%;
+                    width: 50%;
+                }
+                form {
+                    border-radius: 17px;
+                    margin-top: 2%;
+                    border: 4px solid #6A7BA2;
+                    border-top: 50px solid #6A7BA2;
+                    margin-left: auto;
+                    margin-right: auto;
+                    display: grid;
+                    padding: 30px;
+                }
+                input[type="url"]{
+                    border: 1px solid #6A7BA2;
+                }
+                input[type="submit"]{
+                    background-color: #6A7BA2;
+                    color: #FFDFDE;
+                    border: none;
+                    font-size: 18px;
+                    padding: 4px;
+                    font-weight: bold;
+                }
+                input[type="submit"]:hover{
+                    font-weight: bold;
+                }
+                h3{
+                    text-align: center;
+                    margin-top: 8%;
+                }
+                #text{
+                    font-size: 18px;
+                }
+            </style>
+            <h3>New Distraction</h3>
+            <form method="POST" action="{% url 'create' %}" name="Create" id="Create">
+                {% csrf_token %}
+                <span id="text">Enter the URL :</span><input type="url" name="url" required><br>
+                <input type="submit">
+            </form>
+{% endblock %}
     </body>
 </html>
