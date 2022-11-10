@@ -16,6 +16,7 @@
     <body>
         <nav id="navbar">
             <div>
+              <p style="float:left; margin-left: 0; color: white">{{user.username}}</p>
               <a href="{% url 'home' %}"><i class="bi bi-house-fill"></i>Home</a>
               <a href="{% url 'sites' %}"><i class="bi bi-shield-slash-fill"></i>Blocked Sites</a>
               <a><i class="bi bi-clock-fill"></i>Pomodoro</a>
