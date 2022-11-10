@@ -6,13 +6,13 @@
 {% block main %}
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
-      google.charts.load('current', {'packages':['bar']});
+      google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart);
 
       function drawChart() {
         var data = new google.visualization.arrayToDataTable([
           ['Website', 'Timing in minutes', { role: 'style' } ],
-          ['Instagram', 35, 'color: gray'],
+          ['Instagram', 35, 'grey'],
           ['You Tube', 45, 'color: red'],
           ['Snapchat', 22, 'color:purple'],
           ['stackoverflow', 15, 'color:pink'],
@@ -20,34 +20,45 @@
         ]);
 
         var options = {
-          width: 800,
+          width: 500,
           legend: { position: 'none' },
-          chart: {
-            title: 'Time spent on each websites',
-            subtitle: 'based on productivity' },
           axes: {
             x: {
               0: { side: 'bottom', label: 'websites'} // bottom x-axis.
+            },
+            y: {
+              0: { side: 'left', label: 'Time spent'} // y axis.
             }
           },
-          bar: { groupWidth: "80%" }
+          bar: { groupWidth: "70%" }
         };
 
-        var chart = new google.charts.Bar(document.getElementById('top_x_div'));
+        var chart = new google.visualization.ColumnChart(document.getElementById('top_x_div'));
         // Convert the Classic options to Material options.
-        chart.draw(data, google.charts.Bar.convertOptions(options));
+        chart.draw(data,{
+          theme : 'material'
+        });
       };
     </script>
     <style>
       #top_x_div{
-        margin: 50px 200px 50px 200px;
-        padding: 10px;
+        margin-top: 10px;
+        width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        border: 2px solid #6A7BA2;;
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 500px;
-        height: 600px;
+        height: 500px;
+      }
+      h2{
+        margin-top: 10px;
+        font-weight: 700;
+        text-align: center;
+        text-transform: uppercase;
       }
     </style>
+    <h2>Productivity Chart</h2>
     <div id="top_x_div"></div>
 {% endblock %}

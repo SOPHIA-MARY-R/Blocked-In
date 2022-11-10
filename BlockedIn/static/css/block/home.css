@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 body{
     background-color: #FFDFDE;
     color: #6A7BA2;
+    font-family: 'Open Sans', sans-serif;
     width: 100%;
 }
 
@@ -16,7 +18,7 @@ body{
 #navbar div a{
     text-decoration: none;
     margin-top: 50px;
-    margin-right: 5px;
+    margin-right: 15px;
 }
 
 #navbar a:hover{
@@ -48,7 +50,7 @@ body{
 }
   /* Animation */
   .title{
-    margin-top: 5%;
+    margin-top: 8%;
     background-color: #6A7BA2;
     color: #FFDFDE;
     white-space: nowrap;

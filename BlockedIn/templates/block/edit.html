@@ -1,19 +1,51 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Edit</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-    </head>
-    <body>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main %}
+        <style>
+            form {
+                width: 50%;
+                border-radius: 17px;
+                margin-top: 2%;
+                border: 4px solid #6A7BA2;
+                border-top: 50px solid #6A7BA2;
+                margin-left: auto;
+                margin-right: auto;
+                display: grid;
+                padding: 30px;
+            }
+            input[type="url"]{
+                border: 1px solid #6A7BA2;
+            }
+            input[type="submit"]{
+                background-color: #6A7BA2;
+                color: #FFDFDE;
+                border: none;
+                font-size: 18px;
+                margin-top: 22px;
+                padding: 2px;
+                font-weight: bold;
+            }
+            input[type="submit"]:hover{
+                font-weight: bold;
+            }
+            h3{
+                font-weight: bold;
+                text-align: center;
+                margin-top: 8%;
+            }
+            #text{
+                font-size: 18px;
+            }
+        </style>
+        <h3>Alteration of URL</h3>
         <form method="POST">
             {% csrf_token %}
+            <span id="text">Enter the URL :</span>
             <input type="url" name="url" value="{{site.link}}" required>
             <input type="submit" action="/extension/edit/{{site.id}}">
         </form>
         <script src="" async defer></script>
     </body>
 </html>
+{% endblock %}
