@@ -15,14 +15,16 @@
     </head>
     <body>
         <nav id="navbar">
-            <div>
-              <p style="float:left; margin-left: 0; color: white">{{user.username}}</p>
+            <div id="nav1">
               <a href="{% url 'home' %}"><i class="bi bi-house-fill"></i>Home</a>
               <a href="{% url 'sites' %}"><i class="bi bi-shield-slash-fill"></i>Blocked Sites</a>
               <a><i class="bi bi-clock-fill"></i>Pomodoro</a>
               <a href="{% url 'chart' %}"><i class="bi bi-bar-chart-fill"></i>Chart</a>
-              <a><i class="bi bi-pen-fill"></i>Notes</a>
-              <a href="{% url 'logout' %}"><i class="bi bi-x-circle-fill"></i>Logout</a>
+              <a><i class="bi bi-pen-fill"></i>Notes</a>     
+            </div>
+            <div id="nav2">
+                <span><i class="bi bi-person"></i>{{user.username}}</span>
+                <span><a href="{% url 'logout' %}"><i class="bi bi-x-circle-fill"></i>Logout</a></span>  
             </div>
         </nav>
         {% block main %} Hello World {% endblock %}

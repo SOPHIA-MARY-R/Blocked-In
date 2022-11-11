@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'corsheaders',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'livereload',
     'django.contrib.staticfiles',
     'authentication',
     'block',
