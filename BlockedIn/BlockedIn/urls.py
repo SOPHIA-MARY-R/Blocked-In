@@ -20,5 +20,6 @@ urlpatterns = [
     path('', include('authentication.urls')),
     path('extension/', include('block.urls')),
     path('admin/', admin.site.urls),
-    path('stats/', include('stats.urls'))
+    path('stats/', include('stats.urls')),
+    path('pomodoro/', include('pomodoro.urls')),
 ]
