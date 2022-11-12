@@ -9,7 +9,7 @@
       "page": ["index.html"]
     }
   ],
-  "icons": { "48": "icon48.png", "128": "icon128.png" },
+  "icons": { "48": "no-internet.png"},
   "action": {
     "default_popup": "Popup.html",
     "default_title": "BlockedIn"
