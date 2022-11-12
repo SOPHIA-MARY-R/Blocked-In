@@ -1,9 +1,12 @@
+{% load static %}
 <!DOCTYPE html>
 <head>
   <title>Welcome</title>
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
   <script src="https://kit.fontawesome.com/9b45bbf03c.js" crossorigin="anonymous"></script>
+  
+  <link rel="shortcut icon" type="image/png" href="{% static 'img/no-internet.png' %}">
   <html>
   <style>
     body {
@@ -43,7 +46,8 @@
   <div class="w3-display-middle">
     <center>
       <p style="font-weight: bold;">Welcome!</p>
-      <h1>BlockedIn</h1>
+      <h1>BlockedIn</h1><br><br>
+      <img src="https://cdn-icons-png.flaticon.com/512/8293/8293129.png" height="100px" width="100px">
       <p style="font-size: 20px; font-weight: bold;">A chrome extension to block distracting websites </p>
     </center>
     <div class="buton-grp">
