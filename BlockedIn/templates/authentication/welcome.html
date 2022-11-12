@@ -1,11 +1,12 @@
 {% load static %}
 <!DOCTYPE html>
+
 <head>
   <title>Welcome</title>
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
   <script src="https://kit.fontawesome.com/9b45bbf03c.js" crossorigin="anonymous"></script>
-  
+
   <link rel="shortcut icon" type="image/png" href="{% static 'img/no-internet.png' %}">
   <html>
   <style>
@@ -39,29 +40,34 @@
     a {
       text-decoration: none;
     }
+
     * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
 
     .wave {
-  position: relative;
-}
-.wave span {
-  position: relative;
-  display: inline-block;
-  font-size: 40px;
-  color:black;
-  text-transform: uppercase;
-  animation: flip 2s infinite;
-  animation-delay: calc(.2s * var(--i))
-}
-@keyframes flip {
-  0%,80% {
-    transform: rotateY(360deg) 
-  }
-}
+      position: relative;
+    }
+
+    .wave span {
+      position: relative;
+      display: inline-block;
+      font-size: 40px;
+      color: black;
+      text-transform: uppercase;
+      animation: flip 2s infinite;
+      animation-delay: calc(.2s * var(--i))
+    }
+
+    @keyframes flip {
+
+      0%,
+      80% {
+        transform: rotateY(360deg)
+      }
+    }
   </style>
 </head>
 
