@@ -39,15 +39,48 @@
     a {
       text-decoration: none;
     }
+    * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+    .wave {
+  position: relative;
+}
+.wave span {
+  position: relative;
+  display: inline-block;
+  font-size: 40px;
+  color:black;
+  text-transform: uppercase;
+  animation: flip 2s infinite;
+  animation-delay: calc(.2s * var(--i))
+}
+@keyframes flip {
+  0%,80% {
+    transform: rotateY(360deg) 
+  }
+}
   </style>
 </head>
 
 <body>
   <div class="w3-display-middle">
     <center>
-      <p style="font-weight: bold;">Welcome!</p>
-      <h1>BlockedIn</h1><br><br>
       <img src="https://cdn-icons-png.flaticon.com/512/8293/8293129.png" height="100px" width="100px">
+      <p style="font-weight: bold; font-size: 25px;">Welcome!</p>
+      <div class="wave">
+        <span style="--i:1">B</span>
+        <span style="--i:2">L</span>
+        <span style="--i:3">O</span>
+        <span style="--i:4">C</span>
+        <span style="--i:5">K</span>
+        <span style="--i:6">E</span>
+        <span style="--i:7">D</span>
+        <span style="--i:8">I</span>
+        <span style="--i:9">N</span>
+      </div>
       <p style="font-size: 20px; font-weight: bold;">A chrome extension to block distracting websites </p>
     </center>
     <div class="buton-grp">
