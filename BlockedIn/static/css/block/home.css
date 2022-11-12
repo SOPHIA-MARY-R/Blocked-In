@@ -70,10 +70,28 @@ body{
     /* font-weight: bold; */
     /* animation: animated-text 2s steps(29,end) 0s 1 normal both; */
   }  
+  :root {
+    --bg: #FFDFDE;
+    --normal-ring: #6A7BA2;
+    --red-ring: #9d0000;
+    --green-ring: #00aa51;
+    --timer-bg: #6A7BA2;
+    --font-timer:
+    "Bebas Neue", cursive;
+    --font-stsp:
+    "Montserrat", sans-serif;
+    --font-clr: #ffffff;
+  }
+  
+  body {
+    background: #FFDFDE;
+    min-height: 100vh;
+    overflow: hidden;
+  }
+  
   .container {
     height: 600px;
-    width: 600px;
-    background-color: transparent;
+    /* background-color: transparent; */
     position: absolute;
     transform: translate(-50%, -50%);
     top: 50%;
@@ -89,7 +107,7 @@ body{
     height: 415px;
     border-radius: 50%;
     box-shadow: -5px 14px 44px #000000, 5px -16px 50px rgba(255, 255, 255, 0.15);
-    background: var(--normal-ring);
+    background: cadetblue;
   }
   
   .timer {
@@ -106,7 +124,7 @@ body{
   }
   
   #time {
-    width: 300px;
+    width: 400px;
     text-align: center;
     margin: 3rem 0 0 0;
   }
