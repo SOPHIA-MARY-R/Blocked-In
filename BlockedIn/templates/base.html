@@ -21,7 +21,7 @@
               <a href="{% url 'sites' %}"><em class="bi bi-shield-slash-fill"></em>Blocked Sites</a>
               <a href="{% url 'pomodoro' %}"><em class="bi bi-clock-fill"></em>Pomodoro</a>
               <a href="{% url 'chart' %}"><em class="bi bi-bar-chart-fill"></em>Chart</a>
-              <a><em class="bi bi-pen-fill"></em>Notes</a>     
+              <a href="{% url 'notes' %}"><em class="bi bi-pen-fill"></em>Notes</a>     
               <span id="name"><em class="bi bi-person"></em>{{user.username}}</span>
               <span id="logout"><a href="{% url 'logout' %}"><em class="bi bi-x-circle-fill"></em>Logout</a></span> 
             </div>

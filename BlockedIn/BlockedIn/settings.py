@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'authentication',
     'block',
     'stats',
-    'pomodoro'
+    'pomodoro',
+    'notes'
 ]
 
 MIDDLEWARE = [

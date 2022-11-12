@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('stats/', include('stats.urls')),
     path('pomodoro/', include('pomodoro.urls')),
+    path('notes/', include('notes.urls')),
 ]
