@@ -9,3 +9,6 @@ This is being implemented using Django.
 * [SUBHASREE M](https://github.com/subhasree2)
 * [VIDHYA BHARATHI R](https://github.com/vidhya-vidz)
 * [SOPHIA MARY R](https://github.com/SOPHIA-MARY-R)
+
+## Project Demo
+[Demo video](https://drive.google.com/file/d/1GWv-NtFUTpikDQw6eBlV9yzaHJ1yma54/view?usp=share_link)
