@@ -281,6 +281,7 @@ window.onload = function block(){
               document.head.innerHTML = generateSTYLES();
               document.body.innerHTML = generateHTML();
               console.log('Yes')
+              break;
             }
         }
       }
